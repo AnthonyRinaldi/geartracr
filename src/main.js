@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PersonList from './PersonList'
 
-class Hello extends React.Component {
+class Content extends React.Component {
   render() {
-    return <h1>Hello World</h1>
+    return (
+      <div>
+        <h1>GearTracr</h1>
+        <PersonList />
+      </div>)
   }
 }
 
-ReactDOM.render(<Hello />, document.getElementById('content'));
+ReactDOM.render(<Content />, document.getElementById('content'));
