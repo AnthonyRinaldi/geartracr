@@ -8,6 +8,7 @@ export default class PersonList extends React.Component {
   }
 
   loadCommentsFromServer() {
+    // ToDo: Create Server Backend
     // $.ajax({
     //   url: this.props.url,
     //   dataType: 'json',
@@ -19,6 +20,7 @@ export default class PersonList extends React.Component {
     //   }
     // });
 
+    // Temporary testing data
     this.setState({personList:
       [
         {id: 0, firstName: 'Anthony', lastName: 'Rinaldi'},
@@ -30,13 +32,13 @@ export default class PersonList extends React.Component {
 
   componentDidMount() {
     this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+    setInterval(this.loadCommentsFromServer.bind(this), 500);
   }
 
-  personList() {
+  mapPersonList() {
     if (Array.isArray(this.state.personList)) {
       return(this.state.personList.map((person) => {
-        return (<Person person={person} />)
+        return (<Person person={person} key={person.id} />)
       }))
     }
   }
@@ -45,7 +47,7 @@ export default class PersonList extends React.Component {
     return (
       <div>
         <h2>Person List</h2>
-        {this.personList()}
+        {this.mapPersonList()}
       </div>)
   }
 }

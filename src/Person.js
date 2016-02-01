@@ -4,7 +4,7 @@ export default class Person extends React.Component {
   render() {
     return (
       <div>
-        <h3>{this.props.person.firstName} {this.props.person.lastName}</h3>
+        <strong>{this.props.person.firstName} {this.props.person.lastName}</strong>
       </div>)
   }
 }
