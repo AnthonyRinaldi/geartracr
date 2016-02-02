@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PersonList from './PersonList'
+import AddPersonForm from './AddPersonForm'
 
 class Content extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class Content extends React.Component {
       <div>
         <h1>GearTracr</h1>
         <PersonList />
+        <AddPersonForm />
       </div>)
   }
 }
